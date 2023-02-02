@@ -17,7 +17,7 @@ const routes: Routes = [
         (m) => m.DataDetailModule
       ),
   },
-  { path: '', redirectTo: 'products', pathMatch: 'full' },
+  { path: '', redirectTo: 'dataDetails', pathMatch: 'full' },
   {
     path: '**',
     component: PageNotFoundComponent,

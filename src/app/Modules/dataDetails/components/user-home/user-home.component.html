@@ -16,7 +16,10 @@
 </div>
 
 <div>
-  <a [routerLink]="['/dataDetails/users', '10', 'Anna', 'bjhbhjbc']"
+  <a
+    [routerLink]="['/dataDetails/users', '10', 'Anna', 'aa@gma']"
+    [queryParams]="{ allowEdit: '1' }"
+    fragment="loading"
     >Load Anna(10)</a
   >
 </div>
