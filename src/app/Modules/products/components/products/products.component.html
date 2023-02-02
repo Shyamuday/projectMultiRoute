@@ -1,0 +1,20 @@
+<mat-drawer-container class="product-container">
+  <mat-drawer mode="side" opened class="side-bar">
+    <h1>Product List</h1>
+    <div class="container">
+      <p routerLink="laptop">Laptop</p>
+      <p routerLink="mobile">Mobile</p>
+      <p routerLink="shoes">Shoes</p>
+      <p routerLink="books">Books</p>
+    </div>
+  </mat-drawer>
+  <mat-drawer-content>
+    <app-product-info></app-product-info>
+    <!-- <router-outlet></router-outlet> -->
+    <!-- <mat-tab-group>
+      <mat-tab [label]="tab" *ngFor="let tab of lotsOfTabs">
+        <router-outlet></router-outlet>
+      </mat-tab>
+    </mat-tab-group> -->
+  </mat-drawer-content>
+</mat-drawer-container>

@@ -1,0 +1,17 @@
+<mat-tab-group fitInkBarToContent>
+  <mat-tab (click)="redirectSomeWhere('overview')" label="Overview"> </mat-tab>
+  <mat-tab routerLink="inventory" label="Inventory">Content inventory</mat-tab>
+  <mat-tab routerLink="adjustments" label="Adjustments"
+    >Content adjustments</mat-tab
+  >
+  <mat-tab routerLink="transfer" label="transfer">Content transfer</mat-tab>
+  <mat-tab routerLink="relatedProduct" label="RelatedProduct"
+    >Content relatedProduct</mat-tab
+  >
+  <mat-tab routerLink="offers" label="Offers">Content offers</mat-tab>
+  <mat-tab routerLink="order" label="Order">Content order</mat-tab>
+  <mat-tab routerLink="purchase" label="Purchase">Content purchase</mat-tab>
+  <mat-tab routerLink="serialNo" label="SerialNo">Content serialNo</mat-tab>
+  <mat-tab routerLink="history" label="History">Content history</mat-tab>
+  <router-outlet></router-outlet>
+</mat-tab-group>

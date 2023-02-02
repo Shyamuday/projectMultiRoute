@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="sideNavHeader">Users</div>
+  <div class="header"></div>
+  <div class="sideNavContent">
+    <ul>
+      <li *ngFor="let userdata of users">{{ userdata.name }}</li>
+    </ul>
+  </div>
+  <div class="body">
+    <p>User Id is {{ user.id }} loaded!</p>
+    <p>User name is {{ user.name }} loaded!</p>
+    <p>User eamil is {{ user.email }}</p>
+  </div>
+  <div class="sideNavFooter"></div>
+  <div class="footer"></div>
+</div>
+
+<div>
+  <a [routerLink]="['/dataDetails/users', '10', 'Anna', 'bjhbhjbc']"
+    >Load Anna(10)</a
+  >
+</div>

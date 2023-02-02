@@ -1,0 +1,20 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { DetailsWithEmailComponent } from '../components/details-with-email/details-with-email.component';
+import { UserDetailsComponent } from '../components/user-details/user-details.component';
+import { UserHomeComponent } from '../components/user-home/user-home.component';
+import { UserComponent } from '../components/user/user.component';
+
+const routes: Routes = [
+  { path: '', redirectTo: 'users', pathMatch: 'full' },
+  { path: 'users', component: UserHomeComponent },
+  { path: 'users/:id', component: UserComponent },
+  { path: 'users/:id/:name/', component: UserDetailsComponent },
+  // { path: 'users/:id/:name/:email', component: DetailsWithEmailComponent },
+];
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule],
+})
+export class DataDetailRoutingModule {}
