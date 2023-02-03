@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { UsersService } from '../../services/users.service';
 import { User } from '../models/users.model';
 
 @Component({
@@ -11,19 +12,21 @@ import { User } from '../models/users.model';
 export class UserHomeComponent implements OnInit, OnDestroy {
   paramsSubscriptionDestroy!: Subscription;
   user!: { id: string; name: string; email: string };
-
-  users: User[] = [
-    { id: '1', name: 'John', email: 'John@example.com' },
-    { id: '2', name: 'Adam', email: 'uja54@gmail.com' },
-    { id: '3', name: 'Mike', email: 'Mike@example.com' },
-    { id: '4', name: 'Jane', email: 'Jane@example.com' },
-    { id: '5', name: 'Mike', email: 'Mike@example.com' },
-    { id: '6', name: 'Jane', email: 'Jane@example.com' },
-    { id: '7', name: 'Mike', email: 'Mike@example.com' },
+  userSpecifications = [
+    { id: 1, name: 'Overview' },
+    { id: 2, name: 'Description' },
+    { id: 3, name: 'History' },
   ];
-  constructor(private route: ActivatedRoute) {}
+  usersName: User[] = [];
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private _userService: UsersService
+  ) {}
 
   ngOnInit(): void {
+    this.usersName = this._userService.users;
+
     this.user = {
       id: this.route.snapshot.params['id'],
       name: this.route.snapshot.params['name'],
@@ -40,5 +43,24 @@ export class UserHomeComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.paramsSubscriptionDestroy.unsubscribe();
+  }
+  onUserById(id: string): void {
+    this.router.navigate(
+      ['/dataDetails/users/:id']
+      // , {queryParams: { allowName: 'name', fragment: 'loading' }  }
+    );
+  }
+  onUserId(): void {
+    this.router.navigate(['/dataDetails/users/:id/:name/']);
+  }
+  onUserEmail(id: string): void {
+    this.router.navigate(['/dataDetails/users/:id/:email/']);
+  }
+
+  routeMetoUserID() {
+    this.router.navigate(['/dataDetails/users']);
+  }
+  onUserBtn(id: number) {
+    this.router.navigate(['/dataDetails/users', id]);
   }
 }

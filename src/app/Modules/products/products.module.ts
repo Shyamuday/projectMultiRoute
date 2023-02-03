@@ -23,6 +23,7 @@ import { BooksComponent } from './components/productType/books/books.component';
 import { LaptopComponent } from './components/productType/laptop/laptop.component';
 import { MobileComponent } from './components/productType/mobile/mobile.component';
 import { ShoesComponent } from './components/productType/shoes/shoes.component';
+import { UserIdDetailComponent } from '../dataDetails/components/user-id-detail/user-id-detail.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { ShoesComponent } from './components/productType/shoes/shoes.component';
     MobileComponent,
     ShoesComponent,
     BooksComponent,
+    UserIdDetailComponent,
     OverviewComponent,
     InventoryComponent,
     AdjustmentComponent,
