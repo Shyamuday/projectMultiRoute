@@ -7,6 +7,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { DetailsWithEmailComponent } from '../components/details-with-email/details-with-email.component';
 import { UserHomeComponent } from '../components/user-home/user-home.component';
 import { SharedModule } from '../../shared/shared.module';
+import { UserNameDetailComponent } from '../components/user-name-detail/user-name-detail.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { SharedModule } from '../../shared/shared.module';
     UserDetailsComponent,
     DetailsWithEmailComponent,
     UserHomeComponent,
+    UserNameDetailComponent,
   ],
   imports: [
     CommonModule,

@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { UsersService } from '../../services/users.service';
 import { User } from '../models/users.model';
 
@@ -25,6 +25,27 @@ export class UserHomeComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
+    // create custom observable
+    const customObservable = new Observable((observer) => {
+      let count = 0;
+      setInterval(() => {
+        observer.next(count);
+        count++;
+      }, 1000);
+    });
+
+    customObservable.subscribe(
+      (data) => {
+        // console.log('Round ' + data + 1);
+      },
+      (error) => {
+        console.log(error);
+      },
+      () => {
+        console.log('Completed');
+      }
+    );
+
     this.usersName = this._userService.users;
 
     this.user = {
@@ -62,5 +83,8 @@ export class UserHomeComponent implements OnInit, OnDestroy {
   }
   onUserBtn(id: number) {
     this.router.navigate(['/dataDetails/users', id]);
+  }
+  getValue(event: Event): string {
+    return (event.target as HTMLInputElement).value;
   }
 }
