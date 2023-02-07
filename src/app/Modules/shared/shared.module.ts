@@ -4,7 +4,6 @@ import { VoidButtonComponent } from './void-button/void-button.component';
 import { ApiService } from './services/api.service';
 import { ErrorHandlerService } from './services/error-handler.service';
 import { HttpClientModule } from '@angular/common/http';
-import { MatSnackBar } from '@angular/material/snack-bar';
 @NgModule({
   declarations: [VoidButtonComponent],
   imports: [CommonModule, HttpClientModule],

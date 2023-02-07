@@ -7,11 +7,11 @@ import {
   HttpErrorResponse,
 } from '@angular/common/http';
 import { catchError, map, Observable, throwError } from 'rxjs';
-import { MatSnackBarComponent } from '../shared/mat-snack-bar/mat-snack-bar.component';
+import { NotificationService } from '../services/notification.service';
 
 @Injectable()
 export class ErrorCatchingInterceptor implements HttpInterceptor {
-  constructor(private snackBar: MatSnackBarComponent) {}
+  constructor(private snackBar: NotificationService) {}
 
   intercept(
     request: HttpRequest<unknown>,

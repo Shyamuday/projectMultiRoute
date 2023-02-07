@@ -7,15 +7,10 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ApiDemoComponent } from './api-demo/api-demo.component';
 import { ErrorCatchingInterceptor } from './interceptors/error-catching.interceptor';
-import { MatSnackBarComponent } from './shared/mat-snack-bar/mat-snack-bar.component';
+
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 @NgModule({
-  declarations: [
-    AppComponent,
-    PageNotFoundComponent,
-    ApiDemoComponent,
-    MatSnackBarComponent,
-  ],
+  declarations: [AppComponent, PageNotFoundComponent, ApiDemoComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
