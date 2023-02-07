@@ -18,6 +18,11 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'apiData',
+    loadChildren: () =>
+      import('./Modules/api-data/api-data.module').then((m) => m.ApiDataModule),
+  },
+  {
     path: 'dataTalk',
     loadChildren: () =>
       import('./Modules/data-talk/data-talk.module').then(
@@ -25,7 +30,7 @@ const routes: Routes = [
       ),
   },
 
-  { path: '', redirectTo: 'dataTalk', pathMatch: 'full' },
+  // { path: '', redirectTo: 'dataTalk', pathMatch: 'full' },
   {
     path: '**',
     component: PageNotFoundComponent,

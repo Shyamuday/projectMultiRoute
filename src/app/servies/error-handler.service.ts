@@ -6,13 +6,8 @@ import { catchError, Observable, retry, throwError } from 'rxjs';
   providedIn: 'root',
 })
 export class ErrorHandlerService {
-  private endpoint = 'https://jsonplaceholder.typicode.com/users';
   constructor(private http: HttpClient) {}
-  getPost(): Observable<any> {
-    return this.http
-      .get<any>(this.endpoint)
-      .pipe(retry(1), catchError(this.handleError));
-  }
+
   handleError(error: any) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {

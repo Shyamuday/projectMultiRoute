@@ -1,0 +1,8 @@
+.container{
+    display: flex;
+    align-items:self-start;
+    justify-content:space-between;
+    height: 40px;
+    width: 100%;
+    padding: 10px;
+}
