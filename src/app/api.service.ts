@@ -7,7 +7,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ApiService {
-  url = 'https://jsonplaceholder.typicode.com/todos/10';
+  // url = 'https://jsonplaceholder.typicode.com/todos/10';
+  url = 'wrong url to hit error';
 
   constructor(private http: HttpClient) {}
 
