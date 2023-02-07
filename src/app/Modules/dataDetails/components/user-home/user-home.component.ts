@@ -10,6 +10,7 @@ import { User } from '../models/users.model';
   styleUrls: ['./user-home.component.css'],
 })
 export class UserHomeComponent implements OnInit, OnDestroy {
+  paretnProperty: any;
   paramsSubscriptionDestroy!: Subscription;
   user!: { id: string; name: string; email: string };
   userSpecifications = [
@@ -87,4 +88,7 @@ export class UserHomeComponent implements OnInit, OnDestroy {
   getValue(event: Event): string {
     return (event.target as HTMLInputElement).value;
   }
+  // makeMeGreen() {
+  //   this.paretnProperty.style.color = 'green';
+  // }
 }

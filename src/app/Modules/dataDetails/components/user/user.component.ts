@@ -1,4 +1,10 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  OnDestroy,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { Router } from '@angular/router';
 import { interval, Subscription } from 'rxjs';
 import { UsersService } from '../../services/users.service';
@@ -10,6 +16,7 @@ import { User } from '../models/users.model';
   styleUrls: ['./user.component.css'],
 })
 export class UserComponent implements OnInit, OnDestroy {
+  @Output() changeMetoGreen = new EventEmitter<string>();
   private intervalSubscription!: Subscription;
   userNewDetails: User[] = [];
   constructor(private _userService: UsersService, private router: Router) {}
@@ -26,5 +33,8 @@ export class UserComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.intervalSubscription.unsubscribe();
+  }
+  changeToGreen() {
+    this.changeMetoGreen.emit();
   }
 }

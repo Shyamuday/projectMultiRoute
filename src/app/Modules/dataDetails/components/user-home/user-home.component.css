@@ -37,3 +37,11 @@
 .sideNavFooter {
     grid-area: sideNavFooter;
 }
+
+.greenBox{
+    background-color: green;
+    color: green;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}

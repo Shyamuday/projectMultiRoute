@@ -17,7 +17,15 @@ const routes: Routes = [
         (m) => m.DataDetailModule
       ),
   },
-  { path: '', redirectTo: 'dataDetails', pathMatch: 'full' },
+  {
+    path: 'dataTalk',
+    loadChildren: () =>
+      import('./Modules/data-talk/data-talk.module').then(
+        (m) => m.DataTalkModule
+      ),
+  },
+
+  { path: '', redirectTo: 'dataTalk', pathMatch: 'full' },
   {
     path: '**',
     component: PageNotFoundComponent,
